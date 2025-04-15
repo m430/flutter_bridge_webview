@@ -1,39 +1,38 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flutter Bridge WebView
+---
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+基于webview_flutter的Flutter WebView插件，支持iOS和Android平台, 支持通过[flutter-bridge-js](https://github.com/m430/flutter-bridge-js)进行双向通信。
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### 1. 初始化
+
+1. 在Flutter项目中进行初始化：
 
 ```dart
-const like = 'sample';
+// webview控制器
+FlutterBridgeWebViewController? _bridgeController;
+
+FlutterBridgeWebView(
+  // 初始化H5地址
+  initialUrl: h5Url,
+  // 处理H5中js发送过来的消息
+  messageHandler: _handleH5Message,
+  onWebViewCreated: (controller) {
+    setState(() {
+      _bridgeController = controller; // 保存控制器引用
+    });
+  },
+),
 ```
+2. 完成H5中JS-SDK的初始化，参考[flutter-bridge-js]([flutter-bridge-js](URL_ADDRESS.com/m430/flutter-bridge-js)。
 
-## Additional information
+## 2. 发送消息给H5
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+// 发送消息给H5
+_bridgeController?.sendMessageToH5('action', [dynamic payload]);
+```
