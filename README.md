@@ -1,5 +1,4 @@
 # Flutter Bridge WebView
----
 
 基于webview_flutter的Flutter WebView插件，支持iOS和Android平台, 支持通过[flutter-bridge-js](https://github.com/m430/flutter-bridge-js)进行双向通信。
 
