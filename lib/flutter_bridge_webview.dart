@@ -83,9 +83,8 @@ class _FlutterBridgeWebViewState extends State<FlutterBridgeWebView>
             }
             try {
               _webViewController.runJavaScript('''
-                    if (window.${widget.jsChannelName} && typeof window.${widget.jsChannelName}.flutterSdkReady === "function") { 
-                      window.${widget.jsChannelName}.flutterSdkReady();
-                      console.log('flutter====>jsChannelName', typeof window.${widget.jsChannelName}.postMessage)
+                    if (window.FlutterBridgeJS&& typeof window.FlutterBridgeJS.flutterSdkReady === "function") { 
+                      window.FlutterBridgeJS.flutterSdkReady();
                     }
                   ''');
             } catch (e) {
