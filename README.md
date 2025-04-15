@@ -27,7 +27,7 @@ FlutterBridgeWebView(
   },
 ),
 ```
-2. 完成H5中JS-SDK的初始化，参考[flutter-bridge-js]([flutter-bridge-js](URL_ADDRESS.com/m430/flutter-bridge-js)。
+1. 完成H5中JS-SDK的初始化，参考[flutter-bridge-js](URL_ADDRESS.com/m430/flutter-bridge-js)。
 
 ## 2. 发送消息给H5
 
