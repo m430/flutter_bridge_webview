@@ -1,7 +1,9 @@
 name: flutter_bridge_webview
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "A Flutter WebView package that supports two-way communication with H5 pages through flutter-bridge-js."
+version: 0.1.0
+homepage: https://github.com/m430/flutter_bridge_webview
+repository: https://github.com/m430/flutter_bridge_webview
+documentation: https://github.com/m430/flutter_bridge_webview/blob/main/README.md
 
 environment:
   sdk: ^3.6.1
